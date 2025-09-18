@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://［あなたのGitHubPagesのURL］/sitemap.xml
+Sitemap: https://mshibasango-droid.github.io/nori/sitemap.xml
+
