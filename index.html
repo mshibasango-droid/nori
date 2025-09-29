@@ -38,13 +38,12 @@
     .note{border-left:4px solid var(--ac);padding:10px 12px;background:rgba(79,209,197,0.08);border-radius:8px}
     hr{border:0;border-top:1px solid var(--bd);margin:24px 0}
     kbd{border:1px solid #284b6b;border-bottom-width:3px;background:#0b253a;color:#cfe8ff;padding:2px 6px;border-radius:6px}
-  </style>
-.hero{position:relative; overflow:hidden}
+.hero{position:relative; overflow:hidden; min-height:260px;}
 .hero::before{
   content:""; position:absolute; inset:0;
   background:
     linear-gradient(180deg, rgba(6,17,29,.65), rgba(6,17,29,.35) 35%, rgba(6,17,29,.75)),
-    url("IMG_3843.JPG") center/cover no-repeat;
+    url("./IMG_3843.JPG") center/cover no-repeat; /* 画像が index.html と同じ場所ならこのまま */
   z-index:0;
 }
 .hero .container{position:relative; z-index:1}
@@ -56,17 +55,10 @@
   z-index:2;
 }
 
-.gallery-two{
-  display:grid; gap:12px; grid-template-columns:1fr;
-}
-.gallery-two img{
-  width:100%; aspect-ratio:16/10; object-fit:cover;
-  border-radius:14px; border:1px solid var(--bd);
-}
-@media(min-width:820px){
-  .gallery-two{grid-template-columns:1fr 1fr}
-}
-
+.gallery-two{display:grid; gap:12px; grid-template-columns:1fr;}
+.gallery-two img{width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:14px; border:1px solid var(--bd);}
+@media(min-width:820px){ .gallery-two{grid-template-columns:1fr 1fr} }
+  </style>
 </head>
 <body>
   <header class="hero">
