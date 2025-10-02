@@ -14,7 +14,7 @@
     a{color:var(--ac);text-decoration:none}
     a:hover{text-decoration:underline}
     .container{max-width:1100px;margin:0 auto;padding:20px}
-    .hero{padding:64px 20px 32px;border-bottom:1px solid var(--bd);}
+    .hero{padding:64px 20px 32px;border-bottom:1px solid var(--bd); position:relative; overflow:hidden; min-height:260px;}
     .hero h1{margin:0 0 12px;font-size:clamp(24px,4vw,40px)}
     .hero p{margin:0 0 20px;color:var(--muted)}
     .cta{display:flex;gap:12px;flex-wrap:wrap}
@@ -38,28 +38,27 @@
     .note{border-left:4px solid var(--ac);padding:10px 12px;background:rgba(79,209,197,0.08);border-radius:8px}
     hr{border:0;border-top:1px solid var(--bd);margin:24px 0}
     kbd{border:1px solid #284b6b;border-bottom-width:3px;background:#0b253a;color:#cfe8ff;padding:2px 6px;border-radius:6px}
-.hero{position:relative; overflow:hidden; min-height:260px;}
-.hero::before{
-  content:""; position:absolute; inset:0;
-  background:
-    linear-gradient(180deg, rgba(6,17,29,.65), rgba(6,17,29,.35) 35%, rgba(6,17,29,.75)),
-    url("./IMG_3843.JPG") center/cover no-repeat; /* 画像が index.html と同じ場所ならこのまま */
-  z-index:0;
-}
-.hero .container{position:relative; z-index:1}
 
-.logo{
-  position:absolute; top:16px; right:20px;
-  width:112px; height:auto; opacity:.95;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
-  z-index:2;
-}
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(6,17,29,.65), rgba(6,17,29,.35) 35%, rgba(6,17,29,.75)),
+        url("./IMG_3843.JPG") center/cover no-repeat;
+      z-index:0;
+    }
+    .hero .container{position:relative; z-index:1}
 
-.gallery-two{display:grid; gap:12px; grid-template-columns:1fr;}
-.gallery-two img{width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:14px; border:1px solid var(--bd);}
-@media(min-width:820px){ .gallery-two{grid-template-columns:1fr 1fr} }
- .hero::before{ background: linear-gradient(...), url("./IMG_3843.JPG") center/cover no-repeat; }
- </style>
+    .logo{
+      position:absolute; top:16px; right:20px;
+      width:112px; height:auto; opacity:.95;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+      z-index:2;
+    }
+
+    .gallery-two{display:grid; gap:12px; grid-template-columns:1fr;}
+    .gallery-two img{width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:14px; border:1px solid var(--bd);}
+    @media(min-width:820px){ .gallery-two{grid-template-columns:1fr 1fr} }
+  </style>
 </head>
 <body>
   <header class="hero">
@@ -71,6 +70,7 @@
       <div class="cta">
         <a class="btn" href="#reserve">予約フォームへ</a>
         <a class="btn sec" href="#price">料金を見る</a>
+        <a class="btn sec" href="#calendar">釣果カレンダー</a>
       </div>
       <div class="kv" style="margin-top:12px">
         <span class="badge">現金決済</span>
@@ -155,6 +155,21 @@
         </ul>
       </div>
     </section>
+
+    <!-- ▼ ここから追加：釣果カレンダー -->
+    <section id="calendar" class="section">
+      <h2>釣果カレンダー</h2>
+      <div class="card">
+        <p class="small">出航日の釣果・サイズ・エリアを公開しています。最新情報の更新はSNSでもお知らせします。</p>
+        <div style="width:100%; height:600px; border:0; overflow:hidden; border-radius:12px;">
+          <iframe 
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCD45G8C07dKj1hrUYGd9Hh5oEpQnEB4knZ7ZgAXJ4fGCM7mnisqNDC16BcV_ssgyWWZw_XzjfIwGt/pubhtml?widget=true&amp;headers=false" 
+            width="100%" height="600" style="border:0;" loading="lazy" title="釣果カレンダー">
+          </iframe>
+        </div>
+      </div>
+    </section>
+    <!-- ▲ 追加ここまで -->
 
     <section id="access" class="section">
       <h2>集合場所</h2>
