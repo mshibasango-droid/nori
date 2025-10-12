@@ -158,18 +158,61 @@
 
     <!-- ▼ ここから追加：釣果カレンダー -->
     <section id="calendar" class="section">
-      <h2>釣果カレンダー</h2>
-      <div class="card">
-        <p class="small">出航日の釣果・サイズ・エリアを公開しています。最新情報の更新はSNSでもお知らせします。</p>
-        <div style="width:100%; height:600px; border:0; overflow:hidden; border-radius:12px;">
-          <iframe 
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCD45G8C07dKj1hrUYGd9Hh5oEpQnEB4knZ7ZgAXJ4fGCM7mnisqNDC16BcV_ssgyWWZw_XzjfIwGt/pubhtml?widget=true&amp;headers=false" 
-            width="100%" height="600" style="border:0;" loading="lazy" title="釣果カレンダー">
-          </iframe>
+      <section id="calendar" class="section">
+  <h2>釣果カレンダー</h2>
+
+  <!-- 2カラム：左=釣果カレンダー / 右=Windy ウィジェット -->
+  <div class="grid cols-2">
+
+    <!-- 左：釣果カレンダー（既存） -->
+    <div class="card">
+      <p class="small">出航日の釣果・サイズ・エリアを公開しています。最新情報はSNSでもお知らせします。</p>
+      <div style="width:100%; height:600px; border:0; overflow:hidden; border-radius:12px;">
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQCD45G8C07dKj1hrUYGd9Hh5oEpQnEB4knZ7ZgAXJ4fGCM7mnisqNDC16BcV_ssgyWWZw_XzjfIwGt/pubhtml?widget=true&amp;headers=false" 
+          width="100%" height="600" style="border:0;" loading="lazy" title="釣果カレンダー">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- 右：Windy（風・波をトグル切替） -->
+    <div class="card">
+      <div style="display:flex; gap:8px; align-items:center; justify-content:space-between; margin-bottom:8px;">
+        <strong>現在の風・波（Windy）</strong>
+        <div class="small">
+          <label style="margin-right:6px;">表示：</label>
+          <button class="btn sec" style="padding:6px 10px" onclick="setWindy('wind')">風</button>
+          <button class="btn sec" style="padding:6px 10px" onclick="setWindy('waves')">波</button>
         </div>
       </div>
-    </section>
-    <!-- ▲ 追加ここまで -->
+
+      <div style="width:100%; height:600px; border:0; overflow:hidden; border-radius:12px;">
+        <iframe 
+          id="windyFrame"
+          title="Windy"
+          width="100%" height="600" frameborder="0" loading="lazy" 
+          src="https://embed.windy.com/embed2.html?lat=35.5405&lon=133.2058&detailLat=35.5405&detailLon=133.2058&zoom=9&level=surface&overlay=wind&menu=&message=true&marker=true&calendar=now&pressure=true&type=map&location=coordinates&detail=true&metricWind=ms&metricTemp=%C2%B0C">
+        </iframe>
+      </div>
+
+      <p class="small" style="margin-top:8px;">
+        表示位置：森山港付近（境港・米子）。<br>
+        詳細は <a href="https://www.windy.com/?35.540,133.206,9" target="_blank" rel="noopener">Windy本サイトを開く</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Windyの「風 / 波」表示を切り替え（overlayパラメータを書き換え）
+  function setWindy(overlay){
+    const iframe = document.getElementById('windyFrame');
+    const url = new URL(iframe.src);
+    url.searchParams.set('overlay', overlay); // wind / waves / windGusts など
+    iframe.src = url.toString();
+  }
+</script>
 
     <section id="access" class="section">
       <h2>集合場所</h2>
