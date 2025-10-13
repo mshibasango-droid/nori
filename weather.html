@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>天気リンク集 ＋ 当日の1時間ごと予報｜山陰レンタルボート</title>
-  <meta name="description" content="境港・美保湾（森山港付近）の当日1時間ごとの予報と、風・波・雨・潮汐の主要サイトリンク／比較ビュー。">
+  <title>天気リンク（波）｜山陰レンタルボート</title>
+  <meta name="description" content="境港・美保湾（森山港付近）の波情報。Windyの波レイヤ埋め込みと、主要サイト（Yahoo!/tenki.jp/気象庁/ウェザーインフォメーション）へのリンク。">
   <style>
     :root{ --bg:#0b1b2a; --card:#0d2234; --txt:#eef6ff; --muted:#a7bdd6; --ac:#4fd1c5; --bd:#1f3b57;}
     *{box-sizing:border-box}
@@ -15,19 +15,18 @@
     .header h1{margin:0;font-size:clamp(20px,4vw,28px)}
     .btn{display:inline-block;background:var(--ac);color:#062b2d;font-weight:700;padding:10px 14px;border-radius:10px;border:0;cursor:pointer}
     .btn.sec{background:transparent;color:var(--ac);border:1px solid var(--ac)}
-    .grid{display:grid;gap:16px;margin:16px 0}
-    @media(min-width:900px){.cols-3{grid-template-columns:1fr 1fr 1fr} .cols-2{grid-template-columns:1fr 1fr}}
     .card{background:rgba(255,255,255,0.03);border:1px solid var(--bd);border-radius:14px;padding:16px}
     .section h2{margin:14px 0 6px;font-size:clamp(20px,3vw,26px)}
     .small{color:var(--muted);font-size:14px}
-    .tag{display:inline-block;font-size:12px;border:1px solid #2c5d6b;color:#cfe8ff;border-radius:999px;padding:3px 8px;margin-right:6px;background:#0e2b3d}
-    th,td{padding:8px 10px}
-    th{background:#10283d;text-align:left}
+    .grid{display:grid;gap:16px;margin:16px 0}
+    @media(min-width:900px){.cols-2{grid-template-columns:1fr 1fr}}
+    .linkcard{display:flex;flex-direction:column;gap:8px}
+    .linkcard a.btn{align-self:flex-start}
   </style>
 </head>
 <body>
   <header class="header container">
-    <h1>天気リンク集 & 当日の1時間ごと予報（森山港周辺）</h1>
+    <h1>波情報（森山港周辺）</h1>
     <nav style="display:flex;gap:8px;flex-wrap:wrap">
       <a class="btn sec" href="/nori/">← ホームへ戻る</a>
     </nav>
@@ -35,79 +34,73 @@
 
   <main class="container">
 
-    <!-- 当日の1時間ごと予報 -->
+    <!-- Windy（波：waves）だけ埋め込み -->
     <section class="section">
-      <h2>当日の1時間ごとの予報</h2>
-      <div id="hourlyWrap" class="card">
-        <p class="small" id="hourlyNote">読み込み中…（数秒かかることがあります）</p>
-        <div style="overflow:auto; border-radius:12px; border:1px solid var(--bd);">
-          <table id="hourlyTable" style="width:100%; border-collapse:separate; border-spacing:0 6px; display:none">
-            <thead>
-              <tr>
-                <th>時刻</th>
-                <th>天気</th>
-                <th style="text-align:right">気温(°C)</th>
-                <th style="text-align:right">降水量(mm)</th>
-                <th style="text-align:right">降水確率(%)</th>
-                <th style="text-align:right">風(m/s)</th>
-                <th style="text-align:right">突風(m/s)</th>
-                <th style="text-align:right">風向</th>
-              </tr>
-            </thead>
-            <tbody id="hourlyBody"></tbody>
-          </table>
+      <h2>現在の波の見えるマップ（Windy）</h2>
+      <div class="card">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <span class="small">中心：35.5405 / 133.2058（森山港付近）</span>
+          <div>
+            <a class="btn sec" target="_blank" rel="noopener" href="https://www.windy.com/?waves,35.540,133.206,9">Windyを別タブで開く</a>
+          </div>
         </div>
-        <p class="small" style="margin-top:6px">
-          出典：<a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>（無料API／非ログイン）。時刻は Asia/Tokyo（日本時間）。
-        </p>
+        <div style="width:100%;height:70vh;min-height:420px;border-radius:12px;overflow:hidden">
+          <iframe
+            title="Windy waves"
+            width="100%" height="100%" frameborder="0" loading="lazy"
+            src="https://embed.windy.com/embed2.html?lat=35.5405&lon=133.2058&zoom=9&level=surface&overlay=waves&menu=&marker=true&metricWind=ms&metricTemp=%C2%B0C">
+          </iframe>
+        </div>
+        <p class="small" style="margin-top:6px">※ Windy は“波（overlay=waves）”で表示しています。色＝波高、矢印＝波向・うねりの向き。</p>
       </div>
     </section>
 
-    <!-- 主要リンク（すぐ飛べる） -->
+    <!-- 主要サイトリンク（クリックで“波高が分かるページ”へ遷移） -->
     <section class="section">
-      <h2>主要サイト（リンク集）</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3 style="margin-top:0">Windy</h3>
-          <p class="small">ECMWF/GFS等のモデル切替。ビジュアルで直感的。</p>
-          <span class="tag">風</span><span class="tag">波</span><span class="tag">気圧</span>
-          <p><a target="_blank" rel="noopener" href="https://www.windy.com/?35.540,133.206,9">開く</a></p>
+      <h2>主要サイト（波・1時間ごと等のページへ）</h2>
+
+      <div class="grid cols-2">
+        <!-- Yahoo! -->
+        <div class="card linkcard">
+          <div>
+            <h3 style="margin:0 0 6px">Yahoo!天気 - 海の天気・波予測</h3>
+            <p class="small" style="margin:0">地域選択で波高の時間推移が見られます。境港/鳥取沿岸を選択してください。</p>
+          </div>
+          <a class="btn" target="_blank" rel="noopener" href="https://weather.yahoo.co.jp/weather/wave/">Yahoo! 波予測を開く</a>
         </div>
-        <div class="card">
-          <h3 style="margin-top:0">SCW（旧GPV）</h3>
-          <p class="small">日本ローカルの高解像度予報。</p>
-          <span class="tag">風</span><span class="tag">雨</span>
-          <p><a target="_blank" rel="noopener" href="https://scw.imocwx.jp/">開く</a></p>
+
+        <!-- tenki.jp -->
+        <div class="card linkcard">
+          <div>
+            <h3 style="margin:0 0 6px">tenki.jp - 海の天気・波</h3>
+            <p class="small" style="margin:0">エリア→都道府県→沿岸を選ぶと、波の時間変化が確認できます。</p>
+          </div>
+          <a class="btn" target="_blank" rel="noopener" href="https://tenki.jp/marine/">tenki.jp 海の天気を開く</a>
         </div>
-        <div class="card">
-          <h3 style="margin-top:0">IMOC</h3>
-          <p class="small">海の天気総合。沿岸波浪や風。</p>
-          <span class="tag">波</span><span class="tag">風</span>
-          <p><a target="_blank" rel="noopener" href="https://www.imocwx.com/">開く</a></p>
+
+        <!-- 気象庁 -->
+        <div class="card linkcard">
+          <div>
+            <h3 style="margin:0 0 6px">気象庁 - 海上予報（波）</h3>
+            <p class="small" style="margin:0">日本海西部などの海域別の波予報。地域ページから時系列を確認できます。</p>
+          </div>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.jma.go.jp/bosai/kaikotan/">気象庁 海上予報を開く</a>
+        </div>
+
+        <!-- ウェザーインフォメーション -->
+        <div class="card linkcard">
+          <div>
+            <h3 style="margin:0 0 6px">ウェザーインフォメーション - 波</h3>
+            <p class="small" style="margin:0">波高の細かな時間推移が見やすいページ（地域選択してください）。</p>
+          </div>
+          <a class="btn" target="_blank" rel="noopener" href="https://weather-information.jp/">ウェザーインフォメーションを開く</a>
         </div>
       </div>
-    </section>
 
-    <!-- 比較ビュー（タブ切替で1枠表示） -->
-    <section class="section">
-      <h2>天気サイト比較ビュー</h2>
-
-      <!-- タブ -->
-      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px">
-        <button class="btn sec" onclick="loadSite('windy')">Windy</button>
-        <button class="btn sec" onclick="loadSite('scw')">SCW（旧GPV）</button>
-        <button class="btn sec" onclick="loadSite('imoc')">IMOC</button>
-        <button class="btn sec" onclick="loadSite('tenki')">tenki.jp 1時間天気</button>
-        <button class="btn sec" onclick="loadSite('yahoo')">Yahoo! 1時間天気</button>
-      </div>
-
-      <!-- 1つだけiframe（切替式） -->
-      <div style="width:100%; height:70vh; min-height:420px; border-radius:12px; overflow:hidden; border:1px solid var(--bd); background:#0a1726">
-        <iframe id="wxFrame" title="天気比較" width="100%" height="100%" frameborder="0" loading="lazy" src=""
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-
-      <p class="small" id="wxNote" style="margin-top:8px;"></p>
+      <p class="small" style="margin-top:8px">
+        ※ 各サイトで地域（鳥取・山陰・境港/美保湾など）を選ぶと、当日の<strong>時間ごとの波高</strong>が確認できます。<br>
+        ※ サイトにより“1時間刻み/3時間刻み/実測（ナウファス）など表示粒度が異なる”ため、Windyの波と併せてレンジでご判断ください。
+      </p>
     </section>
 
   </main>
@@ -116,111 +109,6 @@
     © <span id="y"></span> 山陰レンタルボート
   </footer>
 
-  <script>
-    document.getElementById('y').textContent=new Date().getFullYear();
-
-    /* ===== 当日の1時間ごと予報（Open-Meteo） ===== */
-    const LAT = 35.5405, LON = 133.2058; // 森山港付近
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}`
-      + `&hourly=temperature_2m,precipitation,precipitation_probability,wind_speed_10m,wind_gusts_10m,wind_direction_10m,weathercode`
-      + `&timezone=Asia%2FTokyo`;
-
-    const WMO = {0:"快晴",1:"晴れ",2:"一時くもり",3:"くもり",45:"霧",48:"着氷性霧",
-      51:"霧雨(弱)",53:"霧雨(中)",55:"霧雨(強)",61:"雨(弱)",63:"雨(中)",65:"雨(強)",
-      66:"着氷雨(弱)",67:"着氷雨(強)",71:"雪(弱)",73:"雪(中)",75:"雪(強)",77:"雪あられ",
-      80:"にわか雨(弱)",81:"にわか雨(中)",82:"にわか雨(強)",85:"にわか雪(弱)",86:"にわか雪(強)",
-      95:"雷雨",96:"雷雨(雹小)",99:"雷雨(雹大)" };
-
-    function degToDir(d){
-      const dirs=["北","北北東","北東","東北東","東","東南東","南東","南南東","南","南南西","南西","西南西","西","西北西","北西","北北西"];
-      return dirs[Math.round(d/22.5)%16] + ` (${Math.round(d)}°)`;
-    }
-    function fmt(n, digits=1){ return (n===null || n===undefined) ? "-" : Number(n).toFixed(digits); }
-
-    (async function loadHourly(){
-      const note = document.getElementById('hourlyNote');
-      const table = document.getElementById('hourlyTable');
-      const body = document.getElementById('hourlyBody');
-
-      try{
-        const res = await fetch(url, {cache:"no-store"});
-        if(!res.ok) throw new Error("APIエラー");
-        const d = await res.json();
-        const now = new Date();
-        const todayStr = new Intl.DateTimeFormat('sv-SE', {timeZone:'Asia/Tokyo', year:'numeric', month:'2-digit', day:'2-digit'}).format(now); // YYYY-MM-DD
-        const times = d.hourly.time; // すでに日本時間
-
-        // 今日の今の時刻以降〜24:00まで
-        const idxToday = [];
-        for (let i=0;i<times.length;i++){
-          if (times[i].startsWith(todayStr)) idxToday.push(i);
-        }
-        const startHour = new Date().getHours();
-        const startIdx = idxToday.find(i => new Date(times[i]).getHours() >= startHour) ?? idxToday[0];
-        const rows = idxToday.filter(i => i >= startIdx);
-
-        body.innerHTML = "";
-        rows.forEach(i=>{
-          const t = new Date(times[i]);
-          const hh = String(t.getHours()).padStart(2,"0")+":00";
-          const wc = d.hourly.weathercode[i];
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
-            <td style="background:rgba(255,255,255,.03)">${hh}</td>
-            <td style="background:rgba(255,255,255,.03)">${WMO[wc] ?? "—"}</td>
-            <td style="background:rgba(255,255,255,.03); text-align:right">${fmt(d.hourly.temperature_2m[i],0)}</td>
-            <td style="background:rgba(255,255,255,.03); text-align:right">${fmt(d.hourly.precipitation[i],1)}</td>
-            <td style="background:rgba(255,255,255,.03); text-align:right">${fmt(d.hourly.precipitation_probability?.[i] ?? null,0)}</td>
-            <td style="background:rgba(255,255,255,.03); text-align:right">${fmt(d.hourly.wind_speed_10m[i],1)}</td>
-            <td style="background:rgba(255,255,255,.03); text-align:right">${fmt(d.hourly.wind_gusts_10m?.[i] ?? null,1)}</td>
-            <td style="background:rgba(255,255,255,.03); text-align:right">${degToDir(d.hourly.wind_direction_10m[i])}</td>
-          `;
-          body.appendChild(tr);
-        });
-
-        table.style.display = "";
-        note.textContent = `更新：${todayStr} 現在の時刻以降を表示（地点: ${LAT.toFixed(3)} / ${LON.toFixed(3)}）。`;
-      }catch(e){
-        note.innerHTML = `読み込みに失敗しました。回線状況をご確認のうえ、<a href="https://www.jma.go.jp/bosai/forecast/" target="_blank" rel="noopener">公式予報</a>をご参照ください。`;
-      }
-    })();
-
-    /* ===== 比較ビュー（タブ切替） ===== */
-    const lat = LAT, lon = LON, zoom = 9;
-    const SITES = {
-      windy: {
-        url: `https://embed.windy.com/embed2.html?lat=${lat}&lon=${lon}&zoom=${zoom}&level=surface&overlay=wind&menu=&marker=true&metricWind=ms&metricTemp=%C2%B0C`,
-        note: `Windy（埋め込み対応）｜位置: ${lat.toFixed(3)} / ${lon.toFixed(3)}`
-      },
-      scw: {
-        url: `https://scw.imocwx.jp/`,
-        note: "SCW（旧GPV）は一部ブラウザで iframe 埋め込み不可のことがあります。表示されない場合は新しいタブでご覧ください。"
-      },
-      imoc: {
-        url: `https://www.imocwx.com/`,
-        note: "IMOCは構成により埋め込み不可のことがあります。表示されない場合は新しいタブでご覧ください。"
-      },
-      tenki: {
-        url: `https://tenki.jp/forecast/8/41/6810/31202/1hour.html`, // 鳥取県西部（米子市付近の1時間天気に近い例）
-        note: "tenki.jpの1時間天気。埋め込み不可のことが多いです。表示されない場合は新しいタブでご覧ください。"
-      },
-      yahoo: {
-        url: `https://weather.yahoo.co.jp/weather/jp/31/6810/31202.html#hour`, // 米子市の例（#hourで1時間帯へ）
-        note: "Yahoo!の1時間天気。埋め込み不可のことが多いです。表示されない場合は新しいタブでご覧ください。"
-      }
-    };
-
-    function loadSite(key){
-      const f = document.getElementById('wxFrame');
-      const note = document.getElementById('wxNote');
-      f.src = SITES[key].url;
-      note.textContent = SITES[key].note + " ／ 表示されない場合：";
-      const a = document.createElement('a');
-      a.href = SITES[key].url; a.textContent = "新しいタブで開く"; a.target = "_blank"; a.rel = "noopener";
-      note.append(" ", a);
-    }
-    // 初期：Windyを表示
-    loadSite('windy');
-  </script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
