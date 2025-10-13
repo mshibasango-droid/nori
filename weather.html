@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>天気リンク集（風・波・雨・潮汐）｜山陰レンタルボート</title>
+  <meta name="description" content="境港・美保湾の釣行判断に役立つ天気サイトを一覧化。風・波・雨・レーダー・潮汐・ナウファス等へのリンクをまとめています。">
+  <style>
+    :root{ --bg:#0b1b2a; --card:#0d2234; --txt:#eef6ff; --muted:#a7bdd6; --ac:#4fd1c5; --bd:#1f3b57;}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;color:var(--txt);background:linear-gradient(180deg,#0a1726,#0e2238 40%,#091521);}
+    a{color:var(--ac);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .header{padding:20px;border-bottom:1px solid var(--bd);display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .header h1{margin:0;font-size:clamp(20px,4vw,28px)}
+    .btn{display:inline-block;background:var(--ac);color:#062b2d;font-weight:700;padding:10px 14px;border-radius:10px;border:0}
+    .btn.sec{background:transparent;color:var(--ac);border:1px solid var(--ac)}
+    .grid{display:grid;gap:16px;margin:16px 0}
+    @media(min-width:900px){.cols-3{grid-template-columns:1fr 1fr 1fr}}
+    .card{background:rgba(255,255,255,0.03);border:1px solid var(--bd);border-radius:14px;padding:16px}
+    .section h2{margin:14px 0 6px;font-size:clamp(20px,3vw,26px)}
+    .small{color:var(--muted);font-size:14px}
+    .tag{display:inline-block;font-size:12px;border:1px solid #2c5d6b;color:#cfe8ff;border-radius:999px;padding:3px 8px;margin-right:6px;background:#0e2b3d}
+  </style>
+</head>
+<body>
+  <header class="header container">
+    <h1>天気リンク集（風・波・雨・潮汐）</h1>
+    <nav style="display:flex;gap:8px">
+      <a class="btn sec" href="/nori/">← ホームへ戻る</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- 便利：Windyだけ軽く埋め込み（位置は森山港付近） -->
+    <section class="section">
+      <h2>現在の様子（Windyプレビュー）</h2>
+      <div class="card">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <span class="small">中心：35.5405 / 133.2058（森山港付近）</span>
+          <div>
+            <a class="btn sec" target="_blank" rel="noopener" href="https://www.windy.com/?35.540,133.206,9">Windyで詳細表示</a>
+          </div>
+        </div>
+        <div style="width:100%;height:420px;border-radius:12px;overflow:hidden">
+          <iframe width="100%" height="420" frameborder="0" loading="lazy" title="Windy"
+            src="https://embed.windy.com/embed2.html?lat=35.5405&lon=133.2058&zoom=9&level=surface&overlay=wind&menu=&marker=true&metricWind=ms&metricTemp=%C2%B0C"></iframe>
+        </div>
+        <p class="small" style="margin-top:6px">※ ここはプレビュー。詳細は下の各サイトで確認してください。</p>
+      </div>
+    </section>
+
+    <!-- 風・波 -->
+    <section class="section">
+      <h2>風・波（予報）</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Windy</h3>
+          <p class="small">世界的に人気のビジュアル予報。モデル切替可（ECMWF/GFS等）。</p>
+          <span class="tag">風</span><span class="tag">波</span><span class="tag">気圧</span>
+          <p><a target="_blank" rel="noopener" href="https://www.windy.com/?35.540,133.206,9">開く</a></p>
+        </div>
+        <div class="card">
+          <h3>SCW（旧GPV）</h3>
+          <p class="small">高解像度・日本ローカル。雨雲や風の細かい構造が見やすい。</p>
+          <span class="tag">風</span><span class="tag">雨</span>
+          <p><a target="_blank" rel="noopener" href="https://scw.imocwx.jp/">開く</a></p>
+        </div>
+        <div class="card">
+          <h3>Windguru</h3>
+          <p class="small">風・波の表形式が見やすい。サーファー定番。</p>
+          <span class="tag">風</span><span class="tag">波</span>
+          <p><a target="_blank" rel="noopener" href="https://www.windguru.cz/">開く</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 雨雲・レーダー -->
+    <section class="section">
+      <h2>雨雲・レーダー</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>気象庁 レーダー</h3>
+          <p class="small">公式レーダー。強雨域や発雷情報の確認に。</p>
+          <span class="tag">雨</span><span class="tag">雷</span>
+          <p><a target="_blank" rel="noopener" href="https://www.jma.go.jp/bosai/nowc/">開く</a></p>
+        </div>
+        <div class="card">
+          <h3>Yahoo!天気 雨雲</h3>
+          <p class="small">スマホで見やすいUI。通知も便利。</p>
+          <span class="tag">雨</span>
+          <p><a target="_blank" rel="noopener" href="https://weather.yahoo.co.jp/weather/zoomradar/">開く</a></p>
+        </div>
+        <div class="card">
+          <h3>tenki.jp 雨雲</h3>
+          <p class="small">時間別の降水予想が直感的。</p>
+          <span class="tag">雨</span>
+          <p><a target="_blank" rel="noopener" href="https://tenki.jp/radar/">開く</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 海況・波浪観測（実測系） -->
+    <section class="section">
+      <h2>海況（実測・観測）</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>ナウファス（NOWPHAS）</h3>
+          <p class="small">全国の波浪観測（有義波高・周期）。近隣観測点の“実測”が分かる。</p>
+          <span class="tag">波高</span><span class="tag">周期</span>
+          <p><a target="_blank" rel="noopener" href="https://nowphas.mlit.go.jp/">開く</a></p>
+        </div>
+        <div class="card">
+          <h3>IMOC 海の天気</h3>
+          <p class="small">沿岸波浪・風・流向。釣り人に人気の総合サイト。</p>
+          <span class="tag">波</span><span class="tag">風</span>
+          <p><a target="_blank" rel="noopener" href="https://www.imocwx.com/">開く</a></p>
+        </div>
+        <div class="card">
+          <h3>気象庁 海上予報</h3>
+          <p class="small">公式の海上警報・海上予報。</p>
+          <span class="tag">海上予報</span><span class="tag">警報</span>
+          <p><a target="_blank" rel="noopener" href="https://www.jma.go.jp/bosai/kaikotan/">開く</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 潮汐 -->
+    <section class="section">
+      <h2>潮汐（タイド）</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>国土地理院 潮汐</h3>
+          <p class="small">公式の潮位データ。</p>
+          <span class="tag">潮位</span>
+          <p><a target="_blank" rel="noopener" href="https://www1.kaiho.mlit.go.jp/KOHO/tide/">開く</a></p>
+        </div>
+        <div class="card">
+          <h3>タイドグラフ.com</h3>
+          <p class="small">見やすい潮汐グラフ（釣り人向け）。</p>
+          <span class="tag">潮汐</span>
+          <p><a target="_blank" rel="noopener" href="https://tide736.net/">開く</a></p>
+        </div>
+        <div class="card">
+          <h3>海上保安庁 潮汐</h3>
+          <p class="small">主要港の潮汐表。</p>
+          <span class="tag">潮汐</span>
+          <p><a target="_blank" rel="noopener" href="https://www1.kaiho.mlit.go.jp/KAN8/tide/">開く</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 見方のコツ -->
+    <section class="section">
+      <h2>“バラつき”の見方（短縮版）</h2>
+      <div class="card">
+        <ul class="small" style="margin:0">
+          <li><strong>風はモデル違い</strong>：ECMWF と GFS で1–3m/s差は普通。両方見てレンジで考える。</li>
+          <li><strong>波は“実測”で補正</strong>：予報（Windy/IMOC）＋ ナウファス（実測）で整合確認。</li>
+          <li><strong>雨は直近レーダー優先</strong>：出港直前は気象庁レーダー＋雷情報。</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container small" style="padding:24px;border-top:1px solid var(--bd);margin-top:30px">
+    © <span id="y"></span> 山陰レンタルボート
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
