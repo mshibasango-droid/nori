@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>天気リンク（波）｜山陰レンタルボート</title>
-  <meta name="description" content="境港・美保湾（森山港付近）の波情報。Windyの波レイヤ埋め込みと、主要サイト（Yahoo!/tenki.jp/気象庁/ウェザーインフォメーション）へのリンク。">
+  <title>波情報リンク｜山陰レンタルボート</title>
+  <meta name="description" content="境港・美保湾（森山港付近）の波情報。Windyの波マップと、主要4サイト（Yahoo!/tenki.jp/気象庁/ウェザーインフォメーション）への直リンク。">
   <style>
     :root{ --bg:#0b1b2a; --card:#0d2234; --txt:#eef6ff; --muted:#a7bdd6; --ac:#4fd1c5; --bd:#1f3b57;}
     *{box-sizing:border-box}
@@ -26,7 +26,7 @@
 </head>
 <body>
   <header class="header container">
-    <h1>波情報（森山港周辺）</h1>
+    <h1>波情報リンク（境港・美保湾）</h1>
     <nav style="display:flex;gap:8px;flex-wrap:wrap">
       <a class="btn sec" href="/nori/">← ホームへ戻る</a>
     </nav>
@@ -36,7 +36,7 @@
 
     <!-- Windy（波：waves）だけ埋め込み -->
     <section class="section">
-      <h2>現在の波の見えるマップ（Windy）</h2>
+      <h2>現在の波（Windy：波レイヤ）</h2>
       <div class="card">
         <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:8px">
           <span class="small">中心：35.5405 / 133.2058（森山港付近）</span>
@@ -51,55 +51,55 @@
             src="https://embed.windy.com/embed2.html?lat=35.5405&lon=133.2058&zoom=9&level=surface&overlay=waves&menu=&marker=true&metricWind=ms&metricTemp=%C2%B0C">
           </iframe>
         </div>
-        <p class="small" style="margin-top:6px">※ Windy は“波（overlay=waves）”で表示しています。色＝波高、矢印＝波向・うねりの向き。</p>
+        <p class="small" style="margin-top:6px">※ 色＝波高、矢印＝波向・うねりの向き（Windy / waves）。</p>
       </div>
     </section>
 
-    <!-- 主要サイトリンク（クリックで“波高が分かるページ”へ遷移） -->
+    <!-- 主要サイトリンク（“境港の波”に直で行ける/近いページ） -->
     <section class="section">
-      <h2>主要サイト（波・1時間ごと等のページへ）</h2>
+      <h2>主要サイト（当日の波高・時系列に近い表示）</h2>
 
       <div class="grid cols-2">
         <!-- Yahoo! -->
         <div class="card linkcard">
           <div>
-            <h3 style="margin:0 0 6px">Yahoo!天気 - 海の天気・波予測</h3>
-            <p class="small" style="margin:0">地域選択で波高の時間推移が見られます。境港/鳥取沿岸を選択してください。</p>
+            <h3 style="margin:0 0 6px">Yahoo!天気 - 中国・四国の波（境港エリアを選択）</h3>
+            <p class="small" style="margin:0">地図型の波高・周期・風向。<strong>鳥取沿岸</strong>を選ぶと境港周辺の波が確認できます。</p>
           </div>
-          <a class="btn" target="_blank" rel="noopener" href="https://weather.yahoo.co.jp/weather/wave/">Yahoo! 波予測を開く</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://weather.yahoo.co.jp/weather/wave/8.html">Yahoo! 波予測を開く</a>
         </div>
 
-        <!-- tenki.jp -->
+        <!-- tenki.jp（境港の海の天気直リンク） -->
         <div class="card linkcard">
           <div>
-            <h3 style="margin:0 0 6px">tenki.jp - 海の天気・波</h3>
-            <p class="small" style="margin:0">エリア→都道府県→沿岸を選ぶと、波の時間変化が確認できます。</p>
+            <h3 style="margin:0 0 6px">tenki.jp - 境港の海の天気（波）</h3>
+            <p class="small" style="margin:0">境港の波高・周期ページ。日付タブで<strong>当日</strong>を選ぶと時系列の波が見られます。</p>
           </div>
-          <a class="btn" target="_blank" rel="noopener" href="https://tenki.jp/marine/">tenki.jp 海の天気を開く</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://tenki.jp/wave/7/34/51/">tenki.jp 境港の波を開く</a>
         </div>
 
-        <!-- 気象庁 -->
+        <!-- 気象庁（海上分布予報：波） -->
         <div class="card linkcard">
           <div>
-            <h3 style="margin:0 0 6px">気象庁 - 海上予報（波）</h3>
-            <p class="small" style="margin:0">日本海西部などの海域別の波予報。地域ページから時系列を確認できます。</p>
+            <h3 style="margin:0 0 6px">気象庁 - 海上分布予報（波）</h3>
+            <p class="small" style="margin:0">公式の波分布。6時間刻みの更新。<strong>日本海西部</strong>付近を拡大して確認します。</p>
           </div>
-          <a class="btn" target="_blank" rel="noopener" href="https://www.jma.go.jp/bosai/kaikotan/">気象庁 海上予報を開く</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.jma.go.jp/bosai/umimesh/">気象庁「海上分布予報」を開く</a>
         </div>
 
-        <!-- ウェザーインフォメーション -->
+        <!-- ウェザーインフォメーション（境漁港：風波予報） -->
         <div class="card linkcard">
           <div>
-            <h3 style="margin:0 0 6px">ウェザーインフォメーション - 波</h3>
-            <p class="small" style="margin:0">波高の細かな時間推移が見やすいページ（地域選択してください）。</p>
+            <h3 style="margin:0 0 6px">ウェザーインフォメーション - 境漁港 風波予報</h3>
+            <p class="small" style="margin:0">境漁港の<strong>時間ごとの波高・周期</strong>まで一覧化（週次レンジ）。</p>
           </div>
-          <a class="btn" target="_blank" rel="noopener" href="https://weather-information.jp/">ウェザーインフォメーションを開く</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.otenki.com/0001_wind_wave_main.htm?chiten_code=31E04304&city=204">境漁港の風波予報を開く</a>
         </div>
       </div>
 
       <p class="small" style="margin-top:8px">
-        ※ 各サイトで地域（鳥取・山陰・境港/美保湾など）を選ぶと、当日の<strong>時間ごとの波高</strong>が確認できます。<br>
-        ※ サイトにより“1時間刻み/3時間刻み/実測（ナウファス）など表示粒度が異なる”ため、Windyの波と併せてレンジでご判断ください。
+        ※ サイトにより粒度が異なります（1時間刻み／3時間刻み／6時間更新など）。可能な範囲で<strong>当日の時系列</strong>が見やすいページへ直リンクしています。<br>
+        ※ 「このページに直接飛びたい」という具体URLがあればお知らせください。差し替えます。
       </p>
     </section>
 
