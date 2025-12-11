@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>船の紹介｜山陰レンタルボート（境港・米子）</title>
+  <meta name="description" content="山陰レンタルボートの使用艇紹介。24ft・トイレ付き・175馬力エンジン搭載。釣りやクルージングに最適な装備やレイアウト、安全装備の詳細を掲載しています。">
+  <link rel="canonical" href="https://mshibasango-droid.github.io/nori/boat.html">
+  <style>
+    :root{
+      --bg:#0b1b2a;
+      --card:#0d2234;
+      --txt:#eef6ff;
+      --muted:#a7bdd6;
+      --ac:#4fd1c5;
+      --bd:#1f3b57;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      padding:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+      color:var(--txt);
+      background:linear-gradient(180deg,#0a1726,#0e2238 40%,#091521);
+    }
+    a{color:var(--ac);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+
+    .hero{
+      padding:64px 20px 32px;
+      border-bottom:1px solid var(--bd);
+      position:relative;
+      overflow:hidden;
+      min-height:260px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(6,17,29,.75), rgba(6,17,29,.35) 40%, rgba(6,17,29,.85)),
+        url("./IMG_3843.JPG") center/cover no-repeat;
+      z-index:0;
+    }
+    .hero-inner{position:relative; z-index:1;}
+    .hero h1{margin:0 0 8px;font-size:clamp(24px,4vw,38px)}
+    .hero p{margin:0 0 16px;color:var(--muted)}
+    .tagline{font-size:14px;color:var(--ac);letter-spacing:.15em;text-transform:uppercase;}
+    .back-link{font-size:14px;margin-top:10px;display:inline-block;}
+
+    .section{margin:28px 0;}
+    .section h2{margin:0 0 8px;font-size:clamp(20px,3vw,26px)}
+    .section > p{margin:0 0 12px;color:var(--muted);}
+
+    .grid{display:grid;gap:16px;margin:16px 0}
+    @media(min-width:820px){
+      .grid.cols-2{grid-template-columns:1.2fr 1fr}
+      .grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+    }
+
+    .card{
+      background:rgba(255,255,255,0.03);
+      border:1px solid var(--bd);
+      border-radius:14px;
+      padding:16px;
+    }
+    .card h3{margin:0 0 8px;font-size:18px;}
+    .small{color:var(--muted);font-size:14px;}
+    .list{padding-left:18px;margin:0;}
+    .list li{margin-bottom:4px;}
+
+    .gallery-two{display:grid; gap:12px; grid-template-columns:1fr;}
+    .gallery-two img{
+      width:100%;
+      aspect-ratio:16/10;
+      object-fit:cover;
+      border-radius:14px;
+      border:1px solid var(--bd);
+    }
+    @media(min-width:820px){
+      .gallery-two{grid-template-columns:1fr 1fr;}
+    }
+
+    .spec-table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0 6px;
+      font-size:14px;
+    }
+    .spec-table th,
+    .spec-table td{
+      padding:8px 10px;
+      border:1px solid var(--bd);
+      background:rgba(255,255,255,0.03);
+    }
+    .spec-table th{
+      width:32%;
+      background:#10283d;
+      text-align:left;
+    }
+    .badge{
+      display:inline-block;
+      background:#133a4f;
+      border:1px solid #1c536e;
+      color:#cde7ff;
+      border-radius:999px;
+      padding:4px 8px;
+      font-size:12px;
+      margin:0 4px 4px 0;
+    }
+
+    .footer{
+      padding:20px;
+      margin-top:32px;
+      border-top:1px solid var(--bd);
+      font-size:13px;
+      color:#a9bfd6;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-inner">
+      <p class="tagline">Boat Guide</p>
+      <h1>使用艇のご紹介</h1>
+      <p>
+        山陰レンタルボートでご利用いただく船のレイアウト・装備・安全面についてまとめました。<br>
+        「どんな船なのか」「何人くらいで快適か」をイメージしやすいように写真と仕様を掲載しています。
+      </p>
+      <a href="./index.html" class="back-link">← トップページに戻る</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 写真ギャラリー -->
+    <section class="section" id="photos">
+      <h2>船の外観・デッキ</h2>
+      <p class="small">
+        実際の写真を掲載しています（画像ファイル名はお手元のものに差し替えてください）。
+      </p>
+      <div class="gallery-two">
+        <!-- 写真ファイル名は実際のものに変更してください -->
+        <img src="./IMG_3843.JPG" alt="船の側面（係留時）">
+        <img src="./boat_deck.jpg" alt="デッキ全体（後方から前方を見る）">
+      </div>
+      <p class="small" style="margin-top:8px;">
+        例）<code>boat_deck.jpg</code> の部分を、実際のデッキ写真のファイル名に変更してください。
+      </p>
+    </section>
+
+    <!-- 基本スペック -->
+    <section class="section" id="spec">
+      <h2>基本スペック</h2>
+      <div class="grid cols-2">
+        <div>
+          <table class="spec-table">
+            <tr>
+              <th>全長</th>
+              <td>約24フィート（約7mクラス）</td>
+            </tr>
+            <tr>
+              <th>エンジン</th>
+              <td>スズキ 175馬力（船外機）</td>
+            </tr>
+            <tr>
+              <th>定員目安</th>
+              <td>最大6名まで（快適人数：釣り3〜4名）</td>
+            </tr>
+            <tr>
+              <th>操船スタイル</th>
+              <td>サイドウォークではないタイプ（片側通路）</td>
+            </tr>
+            <tr>
+              <th>トイレ</th>
+              <td>キャビン内に個室トイレあり</td>
+            </tr>
+            <tr>
+              <th>航行エリア</th>
+              <td>森山港〜境水道〜中海〜美保関周辺（当日説明）</td>
+            </tr>
+          </table>
+        </div>
+        <div class="card">
+          <h3>快適に使える人数の目安</h3>
+          <ul class="list small">
+            <li>釣り主体：<strong>3名までが最も快適</strong></li>
+            <li>4名の場合：前デッキ側からの釣りも活用する必要あり</li>
+            <li>クルージング利用のみの場合：5〜6名でも利用可（荷物量による）</li>
+          </ul>
+          <p class="small">
+            ※ 実際の定員は船検証の記載に従います。安全のため、釣りでのご利用は3〜4名程度を推奨しています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- レイアウト説明 -->
+    <section class="section" id="layout">
+      <h2>船内レイアウト</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>デッキ（外側）</h3>
+          <ul class="list small">
+            <li>後方：メインの釣りスペース。3名までなら十分なスペース。</li>
+            <li>左舷側：船のサイドを通って前方へ移動（足元注意）。</li>
+            <li>前方デッキ：4名利用時などに追加の釣りスペースとして使用可能。</li>
+            <li>後部には<strong>スズキ175馬力の船外機</strong>を搭載。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>キャビン内</h3>
+          <ul class="list small">
+            <li>右側：操船席（運転席）。魚探・計器類を配置。</li>
+            <li>左側：同乗者用のベンチシート。</li>
+            <li>床下・棚：救命胴衣・ロープ・フェンダーなどの収納。</li>
+            <li>前方スペースに<strong>トイレルーム</strong>（目隠し可能）。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small">
+        乗船時・移動時は、滑りやすい場所や段差について出航前のレクチャーでご案内します。
+      </p>
+    </section>
+
+    <!-- 装備一覧 -->
+    <section class="section" id="equipment">
+      <h2>装備・安全備品</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>航海関連</h3>
+          <ul class="list small">
+            <li>GPS魚探</li>
+            <li>コンパス</li>
+            <li>前方ドライブレコーダー（音声なし）</li>
+            <li>航海灯（夜間航行は別途条件あり）</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>安全備品</h3>
+          <ul class="list small">
+            <li>救命胴衣（人数分）※できるだけご持参ください</li>
+            <li>ライフリング・ロープ類</li>
+            <li>消火器</li>
+            <li>法定備品一式（船検に準拠）</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>快適装備</h3>
+          <ul class="list small">
+            <li>トイレ（個室・簡易仕切り）</li>
+            <li>キャビン内ベンチシート</li>
+            <li>ロッドホルダー（数本）</li>
+            <li>ドリンク類を置ける小物スペース</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small">
+        ※装備はメンテナンスや仕様変更により予告なく変更となる場合があります。<br>
+        詳細が気になる方は、ご予約前にお問い合わせください。
+      </p>
+    </section>
+
+    <!-- おすすめの使い方 -->
+    <section class="section" id="recommend">
+      <h2>この船に向いている遊び方</h2>
+      <div class="card">
+        <p class="small">
+          山陰レンタルボートの使用艇は、<strong>「ガチの遊漁船ほど大げさではないけれど、きちんとした船で釣りを楽しみたい」</strong>
+          という方にちょうどいいサイズと装備です。
+        </p>
+        <div style="margin:8px 0;">
+          <span class="badge">タイラバ・ジギング</span>
+          <span class="badge">ライトゲーム</span>
+          <span class="badge">季節のイカ釣り</span>
+          <span class="badge">家族でのショートクルーズ</span>
+        </div>
+        <ul class="list small">
+          <li>・3名までの釣りなら、後方デッキでゆったり釣りを楽しめます。</li>
+          <li>・4名の場合は、前デッキ側も活用しながらのスタイルになります。</li>
+          <li>・トイレ付きなので、家族連れや長時間釣行でも安心です。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 予約への導線 -->
+    <section class="section" id="cta">
+      <h2>この船で出てみたいと思ったら</h2>
+      <div class="card">
+        <p class="small">
+          「イメージはできたけれど、操船やポイントが不安」という方も歓迎です。<br>
+          初回は30分のレクチャーで、危険箇所・航路・基本的な操船について丁寧にご説明します。
+        </p>
+        <p class="small">
+          料金やご利用の流れはトップページにまとめています。<br>
+          ご予約は Googleフォームから受け付けています。
+        </p>
+        <p class="small">
+          👉 <a href="./index.html">トップページ（料金・予約方法）を開く</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> 山陰レンタルボート｜船の紹介ページ
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
